@@ -36,7 +36,6 @@ public class ChuckleClicker implements MouseListener{
 		panel.add(joke);
 		panel.add(punchline);
 		frame.add(panel);
-		frame.pack();
 		
 		joke.addMouseListener(this);
 		punchline.addMouseListener(this);
