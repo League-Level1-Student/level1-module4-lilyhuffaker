@@ -1,9 +1,11 @@
+import java.awt.Color;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.util.Random;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.SwingUtilities;
 
@@ -11,6 +13,7 @@ public class TypingTutor implements Runnable, KeyListener {
 	JFrame frame;
 	JPanel panel;
 	JLabel label;
+
 	public static void main(String[] args) {
 		SwingUtilities.invokeLater(new TypingTutor());
 		
@@ -37,6 +40,8 @@ public class TypingTutor implements Runnable, KeyListener {
 		panel.add(label);
 		frame.add(panel);	
 		frame.addKeyListener(this);
+		
+		
 	}
 
 	@Override
@@ -56,7 +61,14 @@ public class TypingTutor implements Runnable, KeyListener {
 		// TODO Auto-generated method stub
 		System.out.println(arg0.getKeyChar());
 		if(arg0.getKeyChar() == currentLetter) {
-			currentLetter = generateRandomLetter();
+			System.out.println("MMMMMMM AHHHHHH");
+			panel.setBackground(Color.GREEN);
 		}
+		else {
+			System.out.println("No, I don't want that.");
+			panel.setBackground(Color.RED);
+		}
+		currentLetter = generateRandomLetter();
+		label.setText(Character.toString(currentLetter));
 	}
    }
