@@ -61,11 +61,11 @@ public class TypingTutor implements Runnable, KeyListener {
 		// TODO Auto-generated method stub
 		System.out.println(arg0.getKeyChar());
 		if(arg0.getKeyChar() == currentLetter) {
-			System.out.println("MMMMMMM AHHHHHH");
+			System.out.println("Correct");
 			panel.setBackground(Color.GREEN);
 		}
 		else {
-			System.out.println("No, I don't want that.");
+			System.out.println("Incorrect");
 			panel.setBackground(Color.RED);
 		}
 		currentLetter = generateRandomLetter();
